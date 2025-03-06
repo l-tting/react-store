@@ -11,7 +11,7 @@ const StockTrackTable = ({stock_track}) => {
 
   const columns = [
     {
-      name: "id",
+      name: "stock_tid",
       label:"Tracker Id",
       options: {
         customBodyRender: (value) => (
@@ -29,7 +29,7 @@ const StockTrackTable = ({stock_track}) => {
       },
     },
     {
-      name: "stock_count",
+      name: "stock_added",
       label:"Stock Added",
       options: {
         customBodyRender: (value) => (
