@@ -6,6 +6,7 @@ const useGetStock = () => {
 
     const token = getToken()
     const [stockData,setStockData] = useState([])
+    const [stockTracker,setStockTracker] = useState([])
     const [stockMetrics,setStockMetrics] = useState([])
     const [loading,setLoading] = useState(false)
     const [error,setError] = useState(null)
@@ -14,7 +15,8 @@ const useGetStock = () => {
         const loadStockAndMetrics = async ()=>{
             try{
                 const data = await getStockAndMetrics(token)
-               setStockData(data.stockData)
+               setStockData(data.stockData.stock_data)
+               setStockTracker(data.stockData.stock_tracker_data)
                setStockMetrics(data.stockMetric)
                console.log("srock",data)
             }catch(error){
@@ -27,7 +29,7 @@ const useGetStock = () => {
         loadStockAndMetrics()
     },[])
 
-  return {stockData,stockMetrics ,loading, error}
+  return {stockData,stockTracker,stockMetrics ,loading, error}
 }
 
 export default useGetStock
