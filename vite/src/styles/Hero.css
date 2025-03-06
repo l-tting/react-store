@@ -1,0 +1,42 @@
+/* Full-screen hero section with an animated dark gradient background */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    /* Animated dark gradient background */
+    background: linear-gradient(45deg, #0d0d0d, #1a1a1a, #0d0d0d);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+  
+  /* Keyframes for the background gradient animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Styling for the hero text */
+  .hero-content {
+    z-index: 2;
+    color: #eee;
+    text-align: center;
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    /* Optional: Add a subtle border or shadow if desired */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
